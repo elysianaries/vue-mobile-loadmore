@@ -77,13 +77,11 @@ export default {
             this.$emit('startRefresh', true)
         },
         loadingFinish() {
-            console.log('finish')
             this.loading_show = 0
             this.bottom_loading_show = 0
             this.style = `top: 0px;  transition: all 0.5s ease-in-out`
         },
         touchEnd() {
-            console.log(this.gap)
                 // 下拉刷新
             if (this.pull_down) {
                 if (this.gap >= 100) {
