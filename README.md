@@ -70,7 +70,6 @@ Vue.use(vueLoadMore)
   span.loading-mes
   img.loading-mes
   ...
-  用的pug,请自行转化html
 ```
 
 ```JavaScript
