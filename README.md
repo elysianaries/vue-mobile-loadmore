@@ -49,7 +49,7 @@ Vue.use(vueLoadMore)
 
 ```HTML
   .important
-        vueLoadMore(
+        vue-load-more(
             :index = 'index',
             ref = 'loadMore',
             :option = 'option',

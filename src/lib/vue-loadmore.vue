@@ -125,8 +125,8 @@ export default {
             optionDefault: {
                 refresh_message: '快松手',
                 loading_message: '别拉了',
-                refresh_img: 'http://img.lanrentuku.com/img/allimg/1212/5-121204193Q9.gif',
-                loading_img: 'http://img.lanrentuku.com/img/allimg/1212/5-121204193Q9.gif'
+                refresh_img: 'http://www.elysianaries.top/statics/loading.gif',
+                loading_img: 'http://www.elysianaries.top/statics/loading.gif'
             }
         }
     },
