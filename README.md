@@ -65,10 +65,10 @@ Vue.use(vueLoadMore)
   全局修改css, 来调整样式，注意权重
 
   span.refresh-mes
-  img.refresh-mes
+  img.refresh-img
 
   span.loading-mes
-  img.loading-mes
+  img.loading-img
   ...
 ```
 

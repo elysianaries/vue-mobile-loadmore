@@ -3,10 +3,10 @@
         .wrap
             .loading(v-if='loading_show')
                 span.refresh-mes(v-if='pull_down') {{option.refresh_message || optionDefault.refresh_message}}
-                img.refresh-mes(v-else :src='option.refresh_img || optionDefault.refresh_img')
+                img.refresh-img(v-else :src='option.refresh_img || optionDefault.refresh_img')
             .bottom-loading(v-if='bottom_loading_show')
                 span.loading-mes(v-if='pull_up') {{option.loading_message || optionDefault.loading_message}}
-                img.loading-mes(v-else :src='option.loading_img || optionDefault.loading_img')
+                img.loading-img(v-else :src='option.loading_img || optionDefault.loading_img')
             .vue-scroll-body(:style='style', @touchstart='touchStart', @touchmove='touchMove', @touchend='touchEnd')
                 slot
 </template>
