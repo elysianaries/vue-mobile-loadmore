@@ -1,11 +1,11 @@
-# vue-loadmore
+# vue-mobile-loadmore
 
 移动端，h5/webapp, 简易的上拉加载，下拉刷新。
 
 # Install
 
 ```Bash
-npm install vue-loadmore --save
+npm install vue-mobile-loadmore --save
 ```
 
 ### CommonJS
@@ -14,11 +14,11 @@ You can use any build tool which supports `commonjs`:
 
 ```JavaScript
 // register globally
-var vueLoadMore =  require('vue-loadmore');
+var vueLoadMore =  require('vue-mobile-loadmore');
 Vue.use(vueLoadMore)
 
 // or for a single instance
-var vueLoadMore = require('vue-loadmore');
+var vueLoadMore = require('vue-mobile-loadmore');
 new Vue({
   directives: {vueLoadMore}
 })
@@ -30,7 +30,7 @@ Or in ES2015/ES6:
 ```JavaScript
 
 // 在单页面没引用
-import vueLoadMore from 'vue-loadmore'
+import vueLoadMore from 'vue-mobile-loadmore'
 new Vue({
   components: {
      vueLoadMore
@@ -38,7 +38,7 @@ new Vue({
 })
 
 // 全局注册
-import vueLoadMore from 'vue-loadmore'
+import vueLoadMore from 'vue-mobile-loadmore'
 Vue.use(vueLoadMore)
 
 
