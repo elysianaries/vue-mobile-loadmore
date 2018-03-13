@@ -21,10 +21,6 @@ new Vue({
   }
 })
 
-// 全局注册
-import vueLoadMore from 'vue-mobile-loadmore'
-Vue.use(vueLoadMore)
-
 
 ```
 
