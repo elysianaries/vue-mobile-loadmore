@@ -8,27 +8,12 @@
 npm install vue-mobile-loadmore --save
 ```
 
-### CommonJS
 
-You can use any build tool which supports `commonjs`:
-
-```JavaScript
-// register globally
-var vueLoadMore =  require('vue-mobile-loadmore');
-Vue.use(vueLoadMore)
-
-// or for a single instance
-var vueLoadMore = require('vue-mobile-loadmore');
-new Vue({
-  directives: {vueLoadMore}
-})
-
-```
-
-Or in ES2015/ES6:
+## Usage in ES2015/ES6:
 
 ```JavaScript
 
+// 在单页内引用
 import vueLoadMore from 'vue-mobile-loadmore'
 new Vue({
   components: {
@@ -36,17 +21,19 @@ new Vue({
   }
 })
 
+// 全局注册
+import vueLoadMore from 'vue-mobile-loadmore'
+Vue.use(vueLoadMore)
+
+
 ```
 
-
-## Usage
 
 ```HTML
   .important
         vue-load-more(
-            :index = 'index',
             ref = 'loadMore',
-            :option = 'option',
+            :option = 'option', // option (require: true)
             v-on:startLoading = 'startLoad',
             v-on:startRefresh = 'startRefresh')
             .body
@@ -57,12 +44,14 @@ new Vue({
 
 ```css
   全局修改css, 来调整样式，注意权重
+  #load-more-vue
+      .wrap
+		  .vue-scroll-body
+			  span.refresh-mes
+			  img.refresh-img
 
-  span.refresh-mes
-  img.refresh-img
-
-  span.loading-mes
-  img.loading-img
+			  span.loading-mes
+			  img.loading-img
   ...
 ```
 
@@ -81,25 +70,65 @@ new Vue({
   },
   methods: {
     startLoad() {
-        console.log('开始加载')
-        // 上拉加载调用的方法
+        console.log('startLoading')
+        // take your owner method such as 'refreshList()'
+
         setTimeout(() => {
             this.loadFinish()
         }, 500)
     },
     startRefresh() {
-        console.log('开始刷新')
-        // 下拉刷新调用的方法
+        console.log('startRefresh')
+        // take your owner method such as 'getList()'
         setTimeout(() => {
             this.loadFinish()
         }, 500)
     },
     loadFinish() {
-        // 获得数据加载完成后 手动调用此方法来结束动画
+        // when you get the async data, use this method and it will stop the animation
         this.$refs.loadMore.loadingFinish()
     }
 });
 ```
+## Usage in CDN
+
+You can use with `<script>`:
+
+```JavaScript
+<vue-load-more
+	ref = 'loadMore',
+	:option='option', // option (require: true)
+	v-on:startLoading = 'startLoad',
+    v-on:startRefresh = 'startRefresh'>
+  <div class="body">
+     <p v-for='x in 100'>123123</p>
+  </div>
+</vue-load-more>
+
+
+
+<script src="xxx/vue.js"></script>
+<script type="text/javascript" src='vue-loadmore.js'></script>
+<script>
+var app = new Vue({
+  el: "#app",
+  data() {
+    return {
+       option: {
+           refresh_message: '快松手',
+           loading_message: '别拉了',
+           refresh_img: 'XXXX/loading.gif',
+           loading_img: 'XXXX/loading.gif'
+       }
+    }
+  }
+})
+</script>
+
+
+
+```
+
 
 # Options
 
