@@ -29,18 +29,12 @@ Or in ES2015/ES6:
 
 ```JavaScript
 
-// 在单页面没引用
 import vueLoadMore from 'vue-mobile-loadmore'
 new Vue({
   components: {
      vueLoadMore
   }
 })
-
-// 全局注册
-import vueLoadMore from 'vue-mobile-loadmore'
-Vue.use(vueLoadMore)
-
 
 ```
 
